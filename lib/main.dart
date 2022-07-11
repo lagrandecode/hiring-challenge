@@ -15,17 +15,24 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             for (int i = 0; i < 3; i++)
+              //applying expanded to separated the Screens to equal part
               Expanded(
                 child: Column(
                   children: [
-                    Text("Set ${i}",style: Theme.of(context).textTheme.headline6,),
-                    Expanded(child: ListView(
-                      shrinkWrap: true,
-                      children: [
-                        for(int j=0; j<100; j++)
-                          Center(child: Text("{${i}, ${j}}")),
-                      ],
-                    ))
+                    Text(
+                      "Set ${i}",
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    // replacing padding with expanded widget
+                    Expanded(
+                      child: ListView(
+                        shrinkWrap: true,
+                        children: [
+                          for (int j = 0; j < 100; j++)
+                            Center(child: Text("{${i}, ${j}}")),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
